@@ -1,27 +1,12 @@
 {
-    "manifests": {
-        "Enabel/layout-bundle": {
-            "manifest": {
-                "bundles": {
-                    "Enabel\\LayoutBundle\\EnabelLayoutBundle": [
-                        "all"
-                    ]
-                }
-            },
-            "files": {
-                "config/packages/enabel_layout.yaml": {
-                    "contents": [
-                        "enabel_layout:",
-                        "    application_name: Symfony Application",
-                        "    application_short_name: SfApp",
-                        "    application_description: Another Symfony application made by Enabel",
-                        "    supported_locales: 'fr|en'",
-                        ""
-                    ],
-                    "executable": false
-                }
-            },
-            "ref": "8d8be0927c69c4d5a469cd6c103f194eebef891d"
-        }
+    "bundles": {
+        "Enabel\\LayoutBundle\\EnabelLayoutBundle": [
+            "all"
+        ]
+    },
+    "copy-from-recipe": {
+        "assets/": "assets/",
+        "config/": "%CONFIG_DIR%/",
+        "templates/": "templates/"
     }
 }

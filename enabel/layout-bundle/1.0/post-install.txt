@@ -1,0 +1,7 @@
+  * Your layout is almost ready:
+    1. Install the JavaScript dependencies by running <comment>yarn add @enabel/enabel-bootstrap-theme</comment>
+    2. Edit <comment>webpack.config.js</comment> and <info>add</info> the following lines:
+
+        Encore
+            // ...            
+            .addEntry('layout', './assets/js/enabel.js')
