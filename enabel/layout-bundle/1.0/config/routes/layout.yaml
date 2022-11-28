@@ -1,2 +1,0 @@
-enabel_layout:
-    resource: "@EnabelLayoutBundle/config/routes.yaml"
