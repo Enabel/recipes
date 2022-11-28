@@ -4,6 +4,6 @@
 
         Encore
             // ...                        
-            .addEntry('layout', './assets/js/enabel.js')
+            .addEntry('enabel', './assets/enabel.js')
             .enableSassLoader()
     3. Build assets by running <comment>yarn encore dev</comment>
