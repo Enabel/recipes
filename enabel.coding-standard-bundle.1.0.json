@@ -1,0 +1,104 @@
+{
+    "manifests": {
+        "enabel/coding-standard-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\CodingStandardBundle\\EnabelCodingStandardBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "docker/": "docker/"
+                },
+                "env": {
+                    "NODE_VERSION": "16",
+                    "MYSQL_VERSION": "8",
+                    "PHP_VERSION": "8.1",
+                    "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
+                },
+                "gitignore": [
+                    "/%PUBLIC_DIR%/coverage/",
+                    "/symfony",
+                    "/__symfony_bak__",
+                    "!/docker/db/data/.gitignore",
+                    "!/docker/redis/data/.gitignore",
+                    "!/docker/redis/insight/.gitignore"
+                ],
+                "docker-compose": {
+                    "docker-compose.yml": {
+                        "services": [
+                            "database:",
+                            "  image: mysql:${MYSQL_VERSION:-8}-oracle",
+                            "  environment:",
+                            "    MYSQL_DATABASE: ${MYSQL_DATABASE:-app}",
+                            "    # You should definitely change the password in production",
+                            "    MYSQL_PASSWORD: ${MYSQL_PASSWORD:-!ChangeMe!}",
+                            "    MYSQL_ALLOW_EMPTY_PASSWORD: \"yes\"",
+                            "  volumes:",
+                            "    - ./docker/db/data:/var/lib/mysql:rw"
+                        ]
+                    },
+                    "docker-compose.override.yml": {
+                        "services": [
+                            "database:",
+                            "  ports:",
+                            "    - \"3306\"",
+                            "  healthcheck:",
+                            "    test: [ \"CMD\", \"mysqladmin\" ,\"ping\", \"-h\", \"localhost\" ]",
+                            "    timeout: 20s",
+                            "    retries: 10",
+                            "",
+                            "phpmyadmin:",
+                            "  image: phpmyadmin/phpmyadmin",
+                            "  ports:",
+                            "    - \"8080:80\"",
+                            "  depends_on:",
+                            "    - database",
+                            "  environment:",
+                            "    PMA_HOST: database",
+                            "    PMA_USER: root",
+                            "",
+                            "phpqa:",
+                            "  image: jakzal/phpqa:php${PHP_VERSION:-8.1}",
+                            "  working_dir: /project",
+                            "  user: \"${USER_ID:-1000}:${GROUP_ID:-1000}\"",
+                            "  volumes:",
+                            "    - ./:/project",
+                            "",
+                            "node:",
+                            "  image: node:${NODE_VERSION:-16}",
+                            "  privileged: true",
+                            "  working_dir: /project",
+                            "  volumes:",
+                            "    - ./:/project",
+                            "  ports:",
+                            "    - 8888:8080",
+                            "",
+                            "redis:",
+                            "  image: redis",
+                            "  volumes:",
+                            "    - ./docker/redis/data:/data",
+                            "  ports:",
+                            "    - \"6379\"",
+                            "  healthcheck:",
+                            "    test: [\"CMD\", \"redis-cli\" ,\"ping\"]",
+                            "    timeout: 10s",
+                            "    retries: 10",
+                            "",
+                            "redisinsight:",
+                            "  image: redislabs/redisinsight",
+                            "  ports:",
+                            "    - 8001:8001",
+                            "  depends_on:",
+                            "    - redis",
+                            "  volumes:",
+                            "    - ./docker/redis/insight:/db:rw"
+                        ]
+                    }
+                }
+            },
+            "files": [],
+            "ref": "1dcec1c0b1444e9aac8fe31769a6d824a591a940"
+        }
+    }
+}
