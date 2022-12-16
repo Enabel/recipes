@@ -5,8 +5,8 @@
         ]
     },
     "copy-from-recipe": {
-        "docker/": "docker/",
-        "Makefile": "Makefile"
+        "Makefile": "Makefile",
+        "docker/": "docker/"
     },
     "env": {
         "NODE_VERSION": "16",
