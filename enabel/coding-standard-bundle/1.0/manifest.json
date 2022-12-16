@@ -4,9 +4,11 @@
             "all"
         ]
     },
+    "copy-from-recipe": {
+        "docker/": "docker/"
+    },
     "copy-from-package": {
-        "assets/Makefile": "Makefile",
-        "assets/docker/": "docker/"
+        "assets/Makefile": "Makefile"
     },
     "env": {
         "NODE_VERSION": "16",
@@ -112,4 +114,4 @@
         "\t$(COMPOSER) update\n",
         ""
     ]
-}
+},
