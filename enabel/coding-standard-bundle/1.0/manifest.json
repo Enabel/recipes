@@ -4,9 +4,9 @@
             "all"
         ]
     },
-    "copy-from-recipe": {
-        "Makefile": "Makefile",
-        "docker/": "docker/"
+    "copy-from-package": {
+        "assets/Makefile": "Makefile",
+        "assets/docker/": "docker/"
     },
     "env": {
         "NODE_VERSION": "16",
