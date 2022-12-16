@@ -137,7 +137,22 @@
         "help: ## Outputs this help screen",
         "\t@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = \":.*?## \"}{printf \"\\033[32m%-30s\\033[0m %s\\n\", $$1, $$2}' | sed -e 's/\\[32m##/[33m/'\n",
         "\n",
+        "## —— Project \uD83D\uDEE0———————————————————————————————————————————————————————————————",
+        "security: ## Launch dependencies security check",
+        "\t$(SYMFONY_BIN) check:security",
+        "\n",
+        "requirements: ## Launch symfony requirements check",
+        "\t$(SYMFONY_BIN) check:requirements\n",
+        "\n",
+        "## —— Composer \uD83E\uDDD9\u200D♂️ ————————————————————————————————————————————————————————————",
+        "vendor/autoload.php: composer.lock",
+        "\t$(COMPOSER) install --no-progress --prefer-dist --optimize-autoloader",
+        "\n",
+        "composer-install: vendor/autoload.php  ## Install vendors according to the current composer.lock file",
+        "\n",
+        "composer-update: composer.json ## Update vendors according to the composer.json file",
+        "\t$(COMPOSER) update\n",
+        "\n",
         ""
     ]
-
 }
