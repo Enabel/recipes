@@ -112,6 +112,9 @@
         "",
         "composer-update: composer.json ## Update vendors according to the composer.json file",
         "\t$(COMPOSER) update\n",
-        ""
+        "## —— Symfony \uD83C\uDFB5 ———————————————————————————————————————————————————————————————",
+        "cc: ## Clear the cache. DID YOU CLEAR YOUR CACHE????\n\t$(SYMFONY) doctrine:cache:clear-metadata\n\t$(SYMFONY) doctrine:cache:clear-query\n\t$(SYMFONY) doctrine:cache:clear-result\n\t$(SYMFONY) cache:clear --env=$(env)\n",
+        "## —— Symfony binary \uD83D\uDCBB ————————————————————————————————————————————————————————",
+        "cert-install: ## Install the local HTTPS certificates\n\t$(SYMFONY_BIN) server:ca:install\n\nsymfony-start: ## Serve the application with HTTPS support\n\t$(SYMFONY_BIN) serve --daemon\n\nsymfony-stop: ## Stop the web server\n"
     ]
 }
