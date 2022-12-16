@@ -114,4 +114,4 @@
         "\t$(COMPOSER) update\n",
         ""
     ]
-},
+}
