@@ -97,14 +97,14 @@
         }
     },
     "makefile": [
-        "## —— Project \uD83D\uDEE0———————————————————————————————————————————————————————————————",
+        "## \u2014\u2014 Project \ud83d\udee0\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014",
         "security: ## Launch dependencies security check",
         "\t$(SYMFONY_BIN) check:security",
         "",
         "requirements: ## Launch symfony requirements check",
         "\t$(SYMFONY_BIN) check:requirements\n",
         "",
-        "## —— Composer \uD83E\uDDD9\u200D♂️ ————————————————————————————————————————————————————————————",
+        "## \u2014\u2014 Composer \ud83e\uddd9\u200d\u2642\ufe0f \u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014",
         "vendor/autoload.php: composer.lock",
         "\t$(COMPOSER) install --no-progress --prefer-dist --optimize-autoloader",
         "",
