@@ -7,9 +7,11 @@
                         "all"
                     ]
                 },
+                "copy-from-recipe": {
+                    "docker/": "docker/"
+                },
                 "copy-from-package": {
-                    "assets/Makefile": "Makefile",
-                    "assets/docker/": "docker/"
+                    "assets/Makefile": "Makefile"
                 },
                 "env": {
                     "NODE_VERSION": "16",
@@ -144,7 +146,7 @@
                 "post-install-output": [
                     "  * Modify your DATABASE_URL config in <fg=green>.env</>",
                     "",
-                    "  * Remove this block in your <fg=green>docker-compose.yaml file</>",
+                    "  * Remove this block in your <fg=green>docker-compose.yaml file</>:",
                     "    ###> doctrine/doctrine-bundle ###",
                     "      database:",
                     "        image: postgres:${POSTGRES_VERSION:-14}-alpine",
@@ -159,7 +161,7 @@
                     "          # - ./docker/db/data:/var/lib/postgresql/data:rw",
                     "    ###< doctrine/doctrine-bundle ###",
                     "",
-                    "  * Remove this block in your <fg=green>docker-compose.override.yaml file</>",
+                    "  * Remove this block in your <fg=green>docker-compose.override.yaml file</>:",
                     "    ###> doctrine/doctrine-bundle ###",
                     "      database:",
                     "        ports:",
@@ -167,27 +169,8 @@
                     "    ###< doctrine/doctrine-bundle ###"
                 ]
             },
-            "files": {
-                "docker/db/data/.gitignore": {
-                    "contents": [
-                        "*"
-                    ],
-                    "executable": false
-                },
-                "docker/redis/data/.gitignore": {
-                    "contents": [
-                        "*"
-                    ],
-                    "executable": false
-                },
-                "docker/redis/insight/.gitignore": {
-                    "contents": [
-                        "*"
-                    ],
-                    "executable": false
-                }
-            },
-            "ref": "0bba6b9bd44a4261091d8f8183afbdc8afaa5da9"
+            "files": [],
+            "ref": "5fba9b616a476c039a64cce2385f4c4afc87e924"
         }
     }
 }
