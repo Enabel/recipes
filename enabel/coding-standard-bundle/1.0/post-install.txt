@@ -1,6 +1,6 @@
   * Modify your DATABASE_URL config in <fg=green>.env</>
 
-  * Remove this block in your <fg=green>docker-compose.yaml file</>:
+  * Remove this block in your <fg=green>docker-compose.yaml file</>
     ###> doctrine/doctrine-bundle ###
       database:
         image: postgres:${POSTGRES_VERSION:-14}-alpine
@@ -15,7 +15,7 @@
           # - ./docker/db/data:/var/lib/postgresql/data:rw
     ###< doctrine/doctrine-bundle ###
 
-  * Remove this block in your <fg=green>docker-compose.override.yaml file</>:
+  * Remove this block in your <fg=green>docker-compose.override.yaml file</>
     ###> doctrine/doctrine-bundle ###
       database:
         ports:
