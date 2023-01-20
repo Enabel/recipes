@@ -13,7 +13,8 @@
         "assets/Makefile": "Makefile",
         "assets/php.ini": "php.ini",
         "assets/phpinsights.php": "phpinsights.php",
-        "assets/phpstan.neon": "phpstan.neon"
+        "assets/phpstan.neon": "phpstan.neon",
+        "assets/rector.php": "rector.php"
     },
     "env": {
         "NODE_VERSION": "16",
