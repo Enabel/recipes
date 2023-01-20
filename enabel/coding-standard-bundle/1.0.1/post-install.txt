@@ -1,23 +1,13 @@
   * Modify your DATABASE_URL config in <fg=green>.env</>
 
-  * Remove this block in your <fg=green>docker-compose.yaml file</>:
-    ###> doctrine/doctrine-bundle ###
-      database:
-        image: postgres:${POSTGRES_VERSION:-14}-alpine
-        environment:
-          POSTGRES_DB: ${POSTGRES_DB:-app}
-          # You should definitely change the password in production
-          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
-          POSTGRES_USER: ${POSTGRES_USER:-app}
-        volumes:
-          - db-data:/var/lib/postgresql/data:rw
-          # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-          # - ./docker/db/data:/var/lib/postgresql/data:rw
-    ###< doctrine/doctrine-bundle ###
+  * Install the JavaScript dependencies by running <comment>yarn add stylelint stylelint-config-prettier stylelint-config-twbs-bootstrap --dev</comment>
 
-  * Remove this block in your <fg=green>docker-compose.override.yaml file</>:
-    ###> doctrine/doctrine-bundle ###
-      database:
-        ports:
-          - "5432"
-    ###< doctrine/doctrine-bundle ###
+  * Edit <comment>webpack.config.js</comment> and <info>uncomment/add</info> the following lines:
+
+            Encore
+                // ...
+                .addEntry('enabel', './assets/enabel.js')
+                .enableSassLoader()
+
+  * Build assets by running <comment>make assets</comment>
+

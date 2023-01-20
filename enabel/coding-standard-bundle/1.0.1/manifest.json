@@ -8,6 +8,8 @@
         "assets/docker/": "docker/",
         "assets/phpstan/": "phpstan/",
         "assets/.phpmd.xml": ".phpmd.xml",
+        "assets/.stylelintignore": ".stylelintignore",
+        "assets/.stylelintrc": ".stylelintrc",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
         "assets/Makefile": "Makefile",
