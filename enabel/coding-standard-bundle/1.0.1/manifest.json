@@ -6,9 +6,14 @@
     },
     "copy-from-package": {
         "assets/docker/": "docker/",
+        "assets/phpstan/": "phpstan/",
+        "assets/.phpmd.xml": ".phpmd.xml",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
-        "assets/Makefile": "Makefile"
+        "assets/Makefile": "Makefile",
+        "assets/php.ini": "php.ini",
+        "assets/phpinsights.php": "phpinsights.php",
+        "assets/phpstan.neon": "phpstan.neon"
     },
     "env": {
         "NODE_VERSION": "16",
