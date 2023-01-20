@@ -1,6 +1,7 @@
   * Modify your DATABASE_URL config in <fg=green>.env</>
 
-  * Install the JavaScript dependencies by running <comment>yarn add stylelint stylelint-config-prettier stylelint-config-twbs-bootstrap --dev</comment>
+  * Install the JavaScript dependencies for stylelint by running <comment>yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss --dev</comment>
+  * Install the JavaScript dependencies for eslint by running <comment>yarn add eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack eslint-plugin-import eslint-webpack-plugin --dev</comment>
 
   * Edit <comment>webpack.config.js</comment> and <info>uncomment/add</info> the following lines:
 

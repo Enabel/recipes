@@ -7,9 +7,9 @@
     "copy-from-package": {
         "assets/docker/": "docker/",
         "assets/phpstan/": "phpstan/",
+        "assets/.eslintrc": ".eslintrc",
         "assets/.phpmd.xml": ".phpmd.xml",
-        "assets/.stylelintignore": ".stylelintignore",
-        "assets/.stylelintrc": ".stylelintrc",
+        "assets/.stylelintrc.json": ".stylelintrc.json",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
         "assets/Makefile": "Makefile",
