@@ -9,6 +9,7 @@
                 },
                 "copy-from-package": {
                     "assets/docker/": "docker/",
+                    "assets/public/": "public/",
                     "assets/phpstan/": "phpstan/",
                     "assets/tests/": "tests/",
                     "assets/var/": "var/",
@@ -31,12 +32,14 @@
                     "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
                 },
                 "gitignore": [
-                    "/%PUBLIC_DIR%/coverage/",
                     "/symfony",
                     "/__symfony_bak__",
                     "!/docker/db/data/.gitignore",
                     "!/docker/redis/data/.gitignore",
-                    "!/docker/redis/insight/.gitignore"
+                    "!/docker/redis/insight/.gitignore",
+                    "!/public/coverage/.gitignore",
+                    "!/var/cache/coverage/.gitignore",
+                    "!/var/coverage/.gitignore"
                 ],
                 "post-install-output": [
                     "  * Modify your DATABASE_URL config in <fg=green>.env</>",
@@ -54,7 +57,7 @@
                 ]
             },
             "files": [],
-            "ref": "3c5d04b489a47c61cc28e0065ab8b2ff3d6a4c49"
+            "ref": "5d735afb8607073b0945bfca5ea1875a02a68169"
         }
     }
 }

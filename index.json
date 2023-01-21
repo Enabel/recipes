@@ -2,7 +2,7 @@
     "aliases": [],
     "recipes": {
         "enabel/coding-standard-bundle": [
-            "1.0.1"
+            "1.0"
         ],
         "enabel/layout-bundle": [
             "1.0"

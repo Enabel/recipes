@@ -1,0 +1,63 @@
+{
+    "manifests": {
+        "enabel/coding-standard-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\CodingStandardBundle\\EnabelCodingStandardBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "assets/docker/": "docker/",
+                    "assets/public/": "public/",
+                    "assets/phpstan/": "phpstan/",
+                    "assets/tests/": "tests/",
+                    "assets/var/": "var/",
+                    "assets/.eslintrc": ".eslintrc",
+                    "assets/.phpmd.xml": ".phpmd.xml",
+                    "assets/.stylelintrc.json": ".stylelintrc.json",
+                    "assets/docker-compose.yml": "docker-compose.yml",
+                    "assets/docker-compose.override.yml": "docker-compose.override.yml",
+                    "assets/Makefile": "Makefile",
+                    "assets/php.ini": "php.ini",
+                    "assets/phpinsights.php": "phpinsights.php",
+                    "assets/phpstan.neon": "phpstan.neon",
+                    "assets/phpunit.xml.dist": "phpunit.xml.dist",
+                    "assets/rector.php": "rector.php"
+                },
+                "env": {
+                    "NODE_VERSION": "16",
+                    "MYSQL_VERSION": "8",
+                    "PHP_VERSION": "8.1",
+                    "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
+                },
+                "gitignore": [
+                    "/symfony",
+                    "/__symfony_bak__",
+                    "!/docker/db/data/.gitignore",
+                    "!/docker/redis/data/.gitignore",
+                    "!/docker/redis/insight/.gitignore",
+                    "!/public/coverage/.gitignore",
+                    "!/var/cache/coverage/.gitignore",
+                    "!/var/coverage/.gitignore"
+                ],
+                "post-install-output": [
+                    "  * Modify your DATABASE_URL config in <fg=green>.env</>",
+                    "",
+                    "  * Install the JavaScript dependencies for stylelint by running <comment>yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss --dev</comment>",
+                    "  * Install the JavaScript dependencies for eslint by running <comment>yarn add eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack eslint-plugin-import eslint-webpack-plugin --dev</comment>",
+                    "",
+                    "  * Edit <comment>webpack.config.js</comment> and <info>uncomment/add</info> the following lines:",
+                    "",
+                    "            Encore",
+                    "                // ...",
+                    "                .enableEslintPlugin()",
+                    "",
+                    "  * Build assets by running <comment>make assets</comment>"
+                ]
+            },
+            "files": [],
+            "ref": "5d735afb8607073b0945bfca5ea1875a02a68169"
+        }
+    }
+}
