@@ -8,7 +8,7 @@
         "assets/docker/": "docker/",
         "assets/phpstan/": "phpstan/",
         "assets/tests/": "tests/",
-        "assets/var/coverage/": "var/coverage/",
+        "assets/var/": "var/",
         "assets/.eslintrc": ".eslintrc",
         "assets/.phpmd.xml": ".phpmd.xml",
         "assets/.stylelintrc.json": ".stylelintrc.json",
