@@ -7,8 +7,7 @@
 
             Encore
                 // ...
-                .addEntry('enabel', './assets/enabel.js')
-                .enableSassLoader()
+                .enableEslintPlugin()
 
   * Build assets by running <comment>make assets</comment>
 
