@@ -1,13 +1,25 @@
   * Modify your DATABASE_URL config in <fg=green>.env</>
 
-  * Install the JavaScript dependencies for stylelint by running <comment>yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss --dev</comment>
-  * Install the JavaScript dependencies for eslint by running <comment>yarn add eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack eslint-plugin-import eslint-webpack-plugin --dev</comment>
+  * Copy the docker & phpunit config to your project
+    <comment>
+    cp -R vendor/enabel/coding-standard-bundle/assets/docker-compose.* .
+    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .
+    </comment>
 
-  * Edit <comment>webpack.config.js</comment> and <info>uncomment/add</info> the following lines:
+  * Install the JavaScript dependencies
+    <comment>
+    yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss \
+        eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack \
+        eslint-plugin-import eslint-webpack-plugin --dev
+    </comment>
+
+  * Edit <comment>webpack.config.js</comment> and <info>add</info> the following lines:
 
             Encore
                 // ...
                 .enableEslintPlugin()
 
-  * Build assets by running <comment>make assets</comment>
-
+  * Build assets
+    <comment>
+    make assets
+    </comment>
