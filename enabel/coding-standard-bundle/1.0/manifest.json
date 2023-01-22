@@ -17,6 +17,7 @@
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
         "assets/Makefile": "Makefile",
         "assets/php.ini": "php.ini",
+        "assets/phpcs.xml.dist": "phpcs.xml.dist",
         "assets/phpinsights.php": "phpinsights.php",
         "assets/phpstan.neon": "phpstan.neon",
         "assets/phpunit.xml.dist": "phpunit.xml.dist",
@@ -29,6 +30,7 @@
         "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
     },
     "gitignore": [
+        ".phpcs-cache",
         "/symfony",
         "/__symfony_bak__",
         "!/docker/db/data/.gitignore",
