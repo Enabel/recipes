@@ -9,7 +9,7 @@
         "assets/public/": "public/",
         "assets/tests/": "tests/",
         "assets/var/": "var/",
-        "assets/.eslintrc": ".eslintrc",
+        "assets/.eslintrc.json": ".eslintrc.json",
         "assets/.stylelintrc.json": ".stylelintrc.json",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
