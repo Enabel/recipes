@@ -10,7 +10,6 @@
         "assets/tests/": "tests/",
         "assets/var/": "var/",
         "assets/.eslintrc": ".eslintrc",
-        "assets/.phpmd.xml": ".phpmd.xml",
         "assets/.stylelintrc.json": ".stylelintrc.json",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
