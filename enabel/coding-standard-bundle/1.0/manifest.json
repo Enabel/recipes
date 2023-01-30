@@ -7,7 +7,6 @@
     "copy-from-package": {
         "assets/docker/": "docker/",
         "assets/public/": "public/",
-        "assets/phpstan/": "phpstan/",
         "assets/tests/": "tests/",
         "assets/var/": "var/",
         "assets/.eslintrc": ".eslintrc",
@@ -17,11 +16,7 @@
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
         "assets/Makefile": "Makefile",
         "assets/php.ini": "php.ini",
-        "assets/phpcs.xml.dist": "phpcs.xml.dist",
-        "assets/phpinsights.php": "phpinsights.php",
-        "assets/phpstan.neon": "phpstan.neon",
-        "assets/phpunit.xml.dist": "phpunit.xml.dist",
-        "assets/rector.php": "rector.php"
+        "assets/phpunit.xml.dist": "phpunit.xml.dist"
     },
     "env": {
         "NODE_VERSION": "16",
