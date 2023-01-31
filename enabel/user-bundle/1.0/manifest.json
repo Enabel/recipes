@@ -1,0 +1,20 @@
+{
+  "bundles": {
+    "Enabel\\UserBundle\\EnabelUserBundle": ["all"],
+    "KnpU\\OAuth2ClientBundle\\KnpUOAuth2ClientBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "container": {
+      "locale": "en",
+      "enabled_locales": "[ 'en', 'fr' ]",
+      "doctrine_behaviors_blameable_user_entity": "Enabel\\UserBundle\\Entity\\User"
+    },
+    "config/": "%CONFIG_DIR%/",
+    "templates/": "templates/",
+    "src/": "%SRC_DIR%/"
+  },
+  "env": {
+    "AZURE_CLIENT_ID": "paste_here_the_client_id",
+    "AZURE_CLIENT_SECRET": "paste_here_the_secret_id"
+  }
+}
