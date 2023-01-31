@@ -1,0 +1,144 @@
+{
+    "manifests": {
+        "enabel/user-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\UserBundle\\EnabelUserBundle": [
+                        "all"
+                    ],
+                    "KnpU\\OAuth2ClientBundle\\KnpUOAuth2ClientBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "container": {
+                        "locale": "en",
+                        "enabled_locales": "[ 'en', 'fr' ]",
+                        "doctrine_behaviors_blameable_user_entity": "Enabel\\UserBundle\\Entity\\User"
+                    },
+                    "config/": "%CONFIG_DIR%/",
+                    "templates/": "templates/",
+                    "src/": "%SRC_DIR%/"
+                },
+                "env": {
+                    "AZURE_CLIENT_ID": "paste_here_the_client_id",
+                    "AZURE_CLIENT_SECRET": "paste_here_the_secret_id"
+                }
+            },
+            "files": {
+                "config/packages/enabel_user.yaml": {
+                    "contents": [
+                        "enabel_user:",
+                        "    login_redirect_route: 'app_home'",
+                        "    user_class: 'App\\Entity\\Enabel\\User'",
+                        "    user_repository: 'App\\Repository\\Enabel\\UserRepository'",
+                        "",
+                        "knpu_oauth2_client:",
+                        "    clients:",
+                        "        azure_o365:",
+                        "            type: azure",
+                        "            client_id: '%env(AZURE_CLIENT_ID)%'",
+                        "            client_secret: '%env(AZURE_CLIENT_SECRET)%'",
+                        "            api_version: 'v1.0'",
+                        "            url_api: 'https://graph.microsoft.com/'",
+                        "            redirect_route: enabel_azure_check",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/user.yaml": {
+                    "contents": [
+                        "enabel_user:",
+                        "    resource: \"@EnabelUserBundle/config/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Controller/Admin/Enabel/UserCrudController.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Controller\\Admin\\Enabel;",
+                        "",
+                        "use App\\Entity\\Enabel\\User;",
+                        "use Enabel\\UserBundle\\Controller\\Admin\\UserCrudController as BaseUserCrudController;",
+                        "",
+                        "class UserCrudController extends BaseUserCrudController",
+                        "{",
+                        "    public static function getEntityFqcn(): string",
+                        "    {",
+                        "        return User::class;",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/.gitignore": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Entity/Enabel/User.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Entity\\Enabel;",
+                        "",
+                        "use App\\Repository\\Enabel\\UserRepository;",
+                        "use Doctrine\\ORM\\Mapping as ORM;",
+                        "use Enabel\\UserBundle\\Entity\\User as BaseUser;",
+                        "",
+                        "#[ORM\\Entity(repositoryClass: UserRepository::class)]",
+                        "class User extends BaseUser",
+                        "{",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Repository/.gitignore": {
+                    "contents": [
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Repository/Enabel/UserRepository.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Repository\\Enabel;",
+                        "",
+                        "use App\\Entity\\Enabel\\User;",
+                        "use Doctrine\\Persistence\\ManagerRegistry;",
+                        "use Enabel\\UserBundle\\Repository\\UserRepository as BaseUserRepository;",
+                        "",
+                        "/**",
+                        " * @method User|null   find($id, $lockMode = null, $lockVersion = null)",
+                        " * @method User|null   findOneBy(array $criteria, array $orderBy = null)",
+                        " * @method array<User> findAll()",
+                        " * @method array<User> findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)",
+                        " */",
+                        "class UserRepository extends BaseUserRepository",
+                        "{",
+                        "    public function __construct(ManagerRegistry $registry)",
+                        "    {",
+                        "        parent::__construct($registry, User::class);",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1320901dc94e0f919e9f516021ef02f0fb361bde"
+        }
+    }
+}

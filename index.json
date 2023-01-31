@@ -6,6 +6,9 @@
         ],
         "enabel/layout-bundle": [
             "1.0"
+        ],
+        "enabel/user-bundle": [
+            "1.0"
         ]
     },
     "recipe-conflicts": [],
