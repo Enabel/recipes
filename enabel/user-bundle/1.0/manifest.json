@@ -5,8 +5,8 @@
   },
   "container": {
     "locale": "en",
-    "enabled_locales": "[ 'en', 'fr' ]",
-    "doctrine_behaviors_blameable_user_entity": "Enabel\\UserBundle\\Entity\\User"
+    "enabled_locales": [ "en", "fr" ],
+    "doctrine_behaviors_blameable_user_entity": "App\\Entity\\Enabel\\User"
   },
   "copy-from-recipe": {
     "config/": "%CONFIG_DIR%/",
