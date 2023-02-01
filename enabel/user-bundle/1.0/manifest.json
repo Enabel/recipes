@@ -3,12 +3,12 @@
     "Enabel\\UserBundle\\EnabelUserBundle": ["all"],
     "KnpU\\OAuth2ClientBundle\\KnpUOAuth2ClientBundle": ["all"]
   },
+  "container": {
+    "locale": "en",
+    "enabled_locales": "[ 'en', 'fr' ]",
+    "doctrine_behaviors_blameable_user_entity": "Enabel\\UserBundle\\Entity\\User"
+  },
   "copy-from-recipe": {
-    "container": {
-      "locale": "en",
-      "enabled_locales": "[ 'en', 'fr' ]",
-      "doctrine_behaviors_blameable_user_entity": "Enabel\\UserBundle\\Entity\\User"
-    },
     "config/": "%CONFIG_DIR%/",
     "templates/": "templates/",
     "src/": "%SRC_DIR%/"
