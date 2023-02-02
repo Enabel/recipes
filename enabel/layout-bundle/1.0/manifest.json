@@ -6,7 +6,7 @@
     },
     "copy-from-package": {
         "assets/": "assets/",
-        ".browserlistrc": ".browserlistrc",
+        ".browserslistrc": ".browserslistrc",
         "postcss.config.js": "postcss.config.js"
     },
     "copy-from-recipe": {
