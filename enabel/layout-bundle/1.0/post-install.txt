@@ -5,7 +5,7 @@
         Encore
             // ...                        
             .addEntry('enabel', './assets/enabel.js')
-            .addStyleEntry('error', './assets/styles/error.scss')
+            .addStyleEntry('error', './assets/scss/error.scss')
             .enableSassLoader()
             .enablePostCssLoader()
     3. Build assets by running <comment>yarn encore dev</comment>
