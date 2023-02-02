@@ -1,5 +1,5 @@
   * Your layout is almost ready:
-    1. Install the JavaScript dependencies by running <comment>yarn add @enabel/enabel-bootstrap-theme</comment>
+    1. Install the JavaScript dependencies by running <comment>yarn add $(cat vendor/enabel/layout-bundle/requirements.txt)</comment>
     2. Edit <comment>webpack.config.js</comment> and <info>uncomment/add</info> the following lines:
 
         Encore
@@ -7,4 +7,5 @@
             .addEntry('enabel', './assets/enabel.js')
             .addStyleEntry('error', './assets/styles/error.scss')
             .enableSassLoader()
+            .enablePostCssLoader()
     3. Build assets by running <comment>yarn encore dev</comment>
