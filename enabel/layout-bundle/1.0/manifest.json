@@ -4,8 +4,10 @@
             "all"
         ]
     },
+    "copy-from-package": {
+        "assets/": "assets/"
+    },
     "copy-from-recipe": {
-        "assets/": "assets/",
         "config/": "%CONFIG_DIR%/",
         "templates/": "templates/"
     }
