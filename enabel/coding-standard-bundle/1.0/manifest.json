@@ -13,6 +13,7 @@
         "assets/.stylelintrc.json": ".stylelintrc.json",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
+        "assets/grumphp.yml": "grumphp.yml",
         "assets/Makefile": "Makefile",
         "assets/php.ini": "php.ini",
         "assets/phpunit.xml.dist": "phpunit.xml.dist"
