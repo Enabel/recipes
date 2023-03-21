@@ -9,8 +9,10 @@
         "assets/public/": "public/",
         "assets/tests/": "tests/",
         "assets/var/": "var/",
+        "assets/.browserslistrc": ".browserslistrc",
         "assets/.eslintrc.json": ".eslintrc.json",
         "assets/.stylelintrc.json": ".stylelintrc.json",
+        "assets/.symfony.local.yaml": ".symfony.local.yaml",
         "assets/docker-compose.yml": "docker-compose.yml",
         "assets/docker-compose.override.yml": "docker-compose.override.yml",
         "assets/grumphp.yml": "grumphp.yml",
@@ -30,7 +32,6 @@
         "/__symfony_bak__",
         "!/docker/db/data/.gitignore",
         "!/docker/redis/data/.gitignore",
-        "!/docker/redis/insight/.gitignore",
         "!/public/coverage/.gitignore",
         "!/var/cache/coverage/.gitignore",
         "!/var/coverage/.gitignore"
