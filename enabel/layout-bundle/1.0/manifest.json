@@ -8,7 +8,7 @@
         "assets/": "assets/",
         ".browserslistrc": ".browserslistrc",
         "postcss.config.js": "postcss.config.js",
-        "public/": "public/bundles/enabellayout/",
+        "public/": "public/bundles/enabellayout/"
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/",
