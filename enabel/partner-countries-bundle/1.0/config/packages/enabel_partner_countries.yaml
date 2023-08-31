@@ -1,0 +1,3 @@
+enabel_partner_countries:
+    country_class: 'App\Entity\Enabel\Country'
+    country_repository: 'App\Repository\Enabel\CountryRepository'
