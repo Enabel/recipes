@@ -1,6 +1,6 @@
 {
   "bundles": {
-    "Enabel\\PartnerCountriesBundle\\EnabelPartnerCountriesBundle": ["all"],
+    "Enabel\\PartnerCountriesBundle\\EnabelPartnerCountriesBundle": ["all"]
   },
   "copy-from-recipe": {
     "config/": "%CONFIG_DIR%/",
