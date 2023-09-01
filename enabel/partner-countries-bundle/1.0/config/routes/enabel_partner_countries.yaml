@@ -1,0 +1,2 @@
+enabel_partner_countries:
+    resource: "@EnabelPartnerCountriesBundle/config/routes.yaml"
