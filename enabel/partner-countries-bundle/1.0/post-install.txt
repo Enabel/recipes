@@ -1,2 +1,4 @@
   * Your partner countries data is almost ready:
-    1. Init the country data by running <comment>symfony console enabel:partner-countries:init</comment>
+    1. Create a new migration by running <comment>symfony console make:migration</comment>
+    2. Run the migration by running <comment>symfony console doctrine:migrations:migrate</comment>
+    3. Init the country data by running <comment>symfony console enabel:partner-countries:init</comment>
