@@ -12,9 +12,6 @@
                     "assets/public/": "public/",
                     "assets/tests/": "tests/",
                     "assets/var/": "var/",
-                    "assets/.browserslistrc": ".browserslistrc",
-                    "assets/.eslintrc.json": ".eslintrc.json",
-                    "assets/.stylelintrc.json": ".stylelintrc.json",
                     "assets/.symfony.local.yaml": ".symfony.local.yaml",
                     "assets/docker-compose.yml": "docker-compose.yml",
                     "assets/docker-compose.override.yml": "docker-compose.override.yml",
@@ -24,7 +21,6 @@
                     "assets/phpunit.xml.dist": "phpunit.xml.dist"
                 },
                 "env": {
-                    "NODE_VERSION": "16",
                     "MYSQL_VERSION": "8",
                     "PHP_VERSION": "8.1",
                     "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
@@ -46,29 +42,11 @@
                     "    <comment>",
                     "    cp -R vendor/enabel/coding-standard-bundle/assets/docker-compose.* .",
                     "    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .",
-                    "    </comment>",
-                    "",
-                    "  * Install the JavaScript dependencies",
-                    "    <comment>",
-                    "    docker compose run --rm node yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss \\",
-                    "        eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack \\",
-                    "        eslint-plugin-import eslint-webpack-plugin --dev",
-                    "    </comment>",
-                    "",
-                    "  * Edit <comment>webpack.config.js</comment> and <info>add</info> the following lines:",
-                    "",
-                    "            Encore",
-                    "                // ...",
-                    "                .enableEslintPlugin()",
-                    "",
-                    "  * Build assets",
-                    "    <comment>",
-                    "    make assets",
                     "    </comment>"
                 ]
             },
             "files": [],
-            "ref": "047350d118ed73b9ca292b5cda9cbc3496353624"
+            "ref": "3bcbd1181e97354d99e8310f0814777968a0074d"
         }
     }
 }
