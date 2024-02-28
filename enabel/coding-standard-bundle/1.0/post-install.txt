@@ -1,4 +1,4 @@
-  * Modify your DATABASE_URL config in <fg=green>.env</>
+  * Add or Modify your DATABASE_URL config in <fg=green>.env</>
 
   * Copy the docker & phpunit config to your project
     <comment>
@@ -8,7 +8,7 @@
 
   * Install the JavaScript dependencies
     <comment>
-    yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss \
+    docker compose run --rm node yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss \
         eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack \
         eslint-plugin-import eslint-webpack-plugin --dev
     </comment>

@@ -1,0 +1,7 @@
+  * Add or Modify your DATABASE_URL config in <fg=green>.env</>
+
+  * Copy the docker & phpunit config to your project
+    <comment>
+    cp -R vendor/enabel/coding-standard-bundle/assets/docker-compose.* .
+    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .
+    </comment>
