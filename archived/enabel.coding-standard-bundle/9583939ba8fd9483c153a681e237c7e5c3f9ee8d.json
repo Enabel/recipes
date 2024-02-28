@@ -1,0 +1,74 @@
+{
+    "manifests": {
+        "enabel/coding-standard-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\CodingStandardBundle\\EnabelCodingStandardBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "assets/docker/": "docker/",
+                    "assets/public/": "public/",
+                    "assets/tests/": "tests/",
+                    "assets/var/": "var/",
+                    "assets/.browserslistrc": ".browserslistrc",
+                    "assets/.eslintrc.json": ".eslintrc.json",
+                    "assets/.stylelintrc.json": ".stylelintrc.json",
+                    "assets/.symfony.local.yaml": ".symfony.local.yaml",
+                    "assets/docker-compose.yml": "compose.yaml",
+                    "assets/docker-compose.override.yml": "compose.override.yaml",
+                    "assets/grumphp.yml": "grumphp.yml",
+                    "assets/Makefile": "Makefile",
+                    "assets/php.ini": "php.ini",
+                    "assets/phpunit.xml.dist": "phpunit.xml.dist"
+                },
+                "env": {
+                    "NODE_VERSION": "16",
+                    "MYSQL_VERSION": "8",
+                    "PHP_VERSION": "8.1",
+                    "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
+                },
+                "gitignore": [
+                    ".phpcs-cache",
+                    "/symfony",
+                    "/__symfony_bak__",
+                    "!/docker/db/data/.gitignore",
+                    "!/docker/redis/data/.gitignore",
+                    "!/public/coverage/.gitignore",
+                    "!/var/cache/coverage/.gitignore",
+                    "!/var/coverage/.gitignore"
+                ],
+                "post-install-output": [
+                    "  * Add or Modify your DATABASE_URL config in <fg=green>.env</>",
+                    "",
+                    "  * Copy the docker & phpunit config to your project",
+                    "    <comment>",
+                    "    cp -R vendor/enabel/coding-standard-bundle/assets/docker-compose.* .",
+                    "    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .",
+                    "    </comment>",
+                    "",
+                    "  * Install the JavaScript dependencies",
+                    "    <comment>",
+                    "    docker compose run --rm node yarn add stylelint stylelint-config-prettier-scss stylelint-config-standard-scss \\",
+                    "        eslint eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-webpack \\",
+                    "        eslint-plugin-import eslint-webpack-plugin --dev",
+                    "    </comment>",
+                    "",
+                    "  * Edit <comment>webpack.config.js</comment> and <info>add</info> the following lines:",
+                    "",
+                    "            Encore",
+                    "                // ...",
+                    "                .enableEslintPlugin()",
+                    "",
+                    "  * Build assets",
+                    "    <comment>",
+                    "    make assets",
+                    "    </comment>"
+                ]
+            },
+            "files": [],
+            "ref": "9583939ba8fd9483c153a681e237c7e5c3f9ee8d"
+        }
+    }
+}
