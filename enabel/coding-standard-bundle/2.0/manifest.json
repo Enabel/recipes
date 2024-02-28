@@ -10,8 +10,8 @@
         "assets/tests/": "tests/",
         "assets/var/": "var/",
         "assets/.symfony.local.yaml": ".symfony.local.yaml",
-        "assets/docker-compose.yml": "compose.yaml",
-        "assets/docker-compose.override.yml": "compose.override.yaml",
+        "assets/compose.yaml": "compose.yaml",
+        "assets/compose.override.yaml": "compose.override.yaml",
         "assets/grumphp.yml": "grumphp.yml",
         "assets/Makefile": "Makefile",
         "assets/php.ini": "php.ini",
@@ -19,7 +19,7 @@
     },
     "env": {
         "MYSQL_VERSION": "8",
-        "PHP_VERSION": "8.1",
+        "PHP_VERSION": "8.2",
         "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
     },
     "gitignore": [
