@@ -5,6 +5,7 @@
         ]
     },
     "copy-from-package": {
+        "assets/.azure/": ".azure/",
         "assets/docker/": "docker/",
         "assets/public/": "public/",
         "assets/tests/": "tests/",
