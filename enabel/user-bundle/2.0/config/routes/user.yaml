@@ -1,0 +1,2 @@
+enabel_user:
+    resource: "@EnabelUserBundle/config/routes.yaml"

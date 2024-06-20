@@ -1,0 +1,4 @@
+enabel_user:
+    login_redirect_route: 'app_home'
+    user_class: 'App\Entity\Enabel\User'
+    user_repository: 'App\Repository\Enabel\UserRepository'

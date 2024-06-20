@@ -1,0 +1,33 @@
+{
+  "bundles": {
+    "Enabel\\UserBundle\\EnabelUserBundle": ["all"],
+    "KnpU\\OAuth2ClientBundle\\KnpUOAuth2ClientBundle": ["all"]
+  },
+  "container": {
+    "locale": "en",
+    "enabled_locales": [ "en", "fr" ]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/",
+    "templates/": "templates/",
+    "src/": "%SRC_DIR%/"
+  },
+  "env": {
+    "AZURE_CLIENT_ID": "paste_here_the_client_id",
+    "AZURE_CLIENT_SECRET": "paste_here_the_secret_id"
+  },
+  "add-lines": [
+    {
+      "file": "config/packages/knpu_oauth2_client.yaml",
+      "content": "\t\tazure_o365:\n\t\t\ttype: azure\n\t\t\tclient_id: '%env(AZURE_CLIENT_ID)%'\n\t\t\tclient_secret: '%env(AZURE_CLIENT_SECRET)%'\n\t\t\tapi_version: 'v1.0'\n\t\t\turl_api: 'https://graph.microsoft.com/'\n\t\t\tredirect_route: enabel_azure_check\n",
+      "position": "after_target",
+      "target": "clients:"
+    },
+    {
+      "file": "config/packages/stof_doctrine_extensions.yaml",
+      "content": "\torm:\n\t\tdefault:\n\t\t\ttimestampable: true",
+      "position": "after_target",
+      "target": "stof_doctrine_extensions:"
+    }
+  ]
+}
