@@ -21,12 +21,15 @@
       "file": "config/packages/knpu_oauth2_client.yaml",
       "content": "        azure_o365:\n            type: azure\n            client_id: '%env(AZURE_CLIENT_ID)%'\n            client_secret: '%env(AZURE_CLIENT_SECRET)%'\n            api_version: 'v1.0'\n            url_api: 'https://graph.microsoft.com/'\n            redirect_route: enabel_azure_check\n",
       "position": "after_target",
-      "target": "clients:"
+      "target": "clients:",
+      "requires": "knpuniversity/oauth2-client-bundle"
     },
     {
       "file": "config/packages/stof_doctrine_extensions.yaml",
       "content": "    orm:\n        default:\n            timestampable: true",
-      "position": "end"
+      "position": "bottom",
+      "requires": "stof/doctrine-extensions-bundle",
+      "warn_if_missing": true
     }
   ]
 }
