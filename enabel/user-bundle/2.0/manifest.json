@@ -19,15 +19,14 @@
   "add-lines": [
     {
       "file": "config/packages/knpu_oauth2_client.yaml",
-      "content": "\t\tazure_o365:\n\t\t\ttype: azure\n\t\t\tclient_id: '%env(AZURE_CLIENT_ID)%'\n\t\t\tclient_secret: '%env(AZURE_CLIENT_SECRET)%'\n\t\t\tapi_version: 'v1.0'\n\t\t\turl_api: 'https://graph.microsoft.com/'\n\t\t\tredirect_route: enabel_azure_check\n",
+      "content": "        azure_o365:\n            type: azure\n            client_id: '%env(AZURE_CLIENT_ID)%'\n            client_secret: '%env(AZURE_CLIENT_SECRET)%'\n            api_version: 'v1.0'\n            url_api: 'https://graph.microsoft.com/'\n            redirect_route: enabel_azure_check\n",
       "position": "after_target",
       "target": "clients:"
     },
     {
       "file": "config/packages/stof_doctrine_extensions.yaml",
-      "content": "\torm:\n\t\tdefault:\n\t\t\ttimestampable: true",
-      "position": "after_target",
-      "target": "stof_doctrine_extensions:"
+      "content": "    orm:\n        default:\n            timestampable: true",
+      "position": "end"
     }
   ]
 }
