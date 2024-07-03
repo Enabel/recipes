@@ -1,0 +1,6 @@
+{% extends '@EnabelLayout/error/base.html.twig' %}
+{% set btn_link_homepage = path('app_home') %}
+
+{% block error_title %}{{ 'enabel_layout.error.404.title'|trans }}{% endblock %}
+{% block error_message %}{{ 'enabel_layout.error.404.message'|trans }}{% endblock %}
+{% block error_details %}{% endblock %}

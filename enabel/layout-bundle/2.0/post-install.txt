@@ -1,0 +1,12 @@
+  * Your layout is almost ready:
+    0. If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
+    1. Install the dependencies with ImportMap by running the following commands:
+        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme</comment>
+        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css</comment>
+        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css</comment>
+        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css</comment>
+        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min</comment>
+        <comment>symfony console importmap:require @fontsource-variable/maven-pro/index.min.css</comment>
+
+    2. Build assets by running <comment>symfony console sass:build --watch</comment>

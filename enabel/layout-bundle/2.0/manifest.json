@@ -1,0 +1,15 @@
+{
+    "bundles": {
+        "Enabel\\LayoutBundle\\EnabelLayoutBundle": [
+            "all"
+        ]
+    },
+    "copy-from-package": {
+        "assets/": "assets/",
+        "public/": "public/bundles/enabellayout/"
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/",
+        "templates/": "templates/"
+    }
+}

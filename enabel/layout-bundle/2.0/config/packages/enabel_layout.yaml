@@ -1,0 +1,5 @@
+enabel_layout:
+    application_name: Symfony Application
+    application_short_name: SfApp
+    application_description: Another Symfony application made by Enabel
+    supported_locales: 'fr|en'
