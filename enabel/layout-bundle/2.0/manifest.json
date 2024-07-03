@@ -10,7 +10,13 @@
     },
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/",
-        "templates/": "templates/",
-        "assets/app.js": "assets/app.js"
-    }
+        "templates/": "templates/"
+    },
+    "add-lines": [
+        {
+            "file": "assets/app.js",
+            "content": "/** Remove content above this line */\nimport './bootstrap.js';\nimport '@enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/css/variables.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/css/error.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min'\nimport '@fontsource-variable/maven-pro/index.min.css';\nimport './styles/app.scss';\n",
+            "position": "bottom"
+        }
+    ]
 }
