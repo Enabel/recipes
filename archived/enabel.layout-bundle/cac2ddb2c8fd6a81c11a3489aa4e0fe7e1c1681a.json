@@ -1,0 +1,143 @@
+{
+    "manifests": {
+        "enabel/layout-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\LayoutBundle\\EnabelLayoutBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-package": {
+                    "assets/": "assets/",
+                    "public/": "public/bundles/enabellayout/"
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "templates/": "templates/"
+                },
+                "post-install-output": [
+                    "  * Your layout is almost ready:",
+                    "    0. If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.",
+                    "",
+                    "    1. Install the dependencies with ImportMap by running the following commands:",
+                    "        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme</comment>",
+                    "        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css</comment>",
+                    "        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css</comment>",
+                    "        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css</comment>",
+                    "        <comment>symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min</comment>",
+                    "        <comment>symfony console importmap:require @fontsource-variable/maven-pro/index.min.css</comment>",
+                    "",
+                    "    2. Build assets by running <comment>symfony console sass:build --watch</comment>"
+                ]
+            },
+            "files": {
+                "config/packages/enabel_layout.yaml": {
+                    "contents": [
+                        "enabel_layout:",
+                        "    application_name: Symfony Application",
+                        "    application_short_name: SfApp",
+                        "    application_description: Another Symfony application made by Enabel",
+                        "    supported_locales: 'fr|en'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/layout.yaml": {
+                    "contents": [
+                        "enabel_layout:",
+                        "    resource: \"@EnabelLayoutBundle/config/routes.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "templates/base.html.twig": {
+                    "contents": [
+                        "{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "templates/bundles/TwigBundle/Exception/error.html.twig": {
+                    "contents": [
+                        "{% extends '@EnabelLayout/error/base.html.twig' %}",
+                        "",
+                        "{% block error_button %}",
+                        "{% endblock %}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "templates/bundles/TwigBundle/Exception/error403.html.twig": {
+                    "contents": [
+                        "{% extends '@EnabelLayout/error/base.html.twig' %}",
+                        "{% set btn_link_homepage = path('app_home') %}",
+                        "",
+                        "{% block error_title %}{{ 'enabel_layout.error.403.title'|trans }}{% endblock %}",
+                        "{% block error_message %}{{ 'enabel_layout.error.403.message'|trans }}{% endblock %}",
+                        "{% block error_details %}{% endblock %}"
+                    ],
+                    "executable": false
+                },
+                "templates/bundles/TwigBundle/Exception/error404.html.twig": {
+                    "contents": [
+                        "{% extends '@EnabelLayout/error/base.html.twig' %}",
+                        "{% set btn_link_homepage = path('app_home') %}",
+                        "",
+                        "{% block error_title %}{{ 'enabel_layout.error.404.title'|trans }}{% endblock %}",
+                        "{% block error_message %}{{ 'enabel_layout.error.404.message'|trans }}{% endblock %}",
+                        "{% block error_details %}{% endblock %}"
+                    ],
+                    "executable": false
+                },
+                "templates/emails/example.html.twig": {
+                    "contents": [
+                        "{% extends '@EnabelLayout/emails/base.html.twig' %}",
+                        "",
+                        "{% block content %}",
+                        "",
+                        "    <tr>",
+                        "        <td class=\"wrapper\" style=\"font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;\" valign=\"top\">",
+                        "            <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;\" width=\"100%\">",
+                        "                <tr>",
+                        "                    <td style=\"font-family: sans-serif; font-size: 14px; vertical-align: top;\" valign=\"top\">",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\">Dear Dev,</p>",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\">Here is the basic Enabel HTML template for sending emails. Feel free to modify it for your needs.</p>",
+                        "                        <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"btn btn-primary\" style=\"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;\" width=\"100%\">",
+                        "                            <tbody>",
+                        "                            <tr>",
+                        "                                <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;\" valign=\"top\">",
+                        "                                    <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;\">",
+                        "                                        <tbody>",
+                        "                                        <tr>",
+                        "                                            <td style=\"font-family: sans-serif; font-size: 14px; vertical-align: top; border-radius: 5px; text-align: center; background-color: #007da5;\" valign=\"top\" align=\"center\" bgcolor=\"#007da5\">",
+                        "                                                <a href=\"#\" target=\"_blank\" style=\"border: solid 1px #007da5; border-radius: 5px; box-sizing: border-box; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #007da5; border-color: #007da5; color: #ffffff;\">",
+                        "                                                    Button example",
+                        "                                                </a>",
+                        "                                            </td>",
+                        "                                        </tr>",
+                        "                                        </tbody>",
+                        "                                    </table>",
+                        "                                </td>",
+                        "                            </tr>",
+                        "                            </tbody>",
+                        "                        </table>",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\"><a href=\"#\">Link example</a></p>",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid aut corporis,",
+                        "                            doloremque est eveniet, iste iusto nam neque nulla perferendis perspiciatis.</p>",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\">Good luck! Hope it works.</p>",
+                        "                        <p style=\"font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;\">Enabel Dev Team</p>",
+                        "                    </td>",
+                        "                </tr>",
+                        "            </table>",
+                        "        </td>",
+                        "    </tr>",
+                        "",
+                        "{% endblock %}"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "cac2ddb2c8fd6a81c11a3489aa4e0fe7e1c1681a"
+        }
+    }
+}
