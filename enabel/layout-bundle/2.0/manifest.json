@@ -11,5 +11,12 @@
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/",
         "templates/": "templates/"
-    }
+    },
+    "add-lines": [
+        {
+            "file": "assets/app.js",
+            "content": "import '@enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/css/variables.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/css/error.min.css'\nimport '@enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min'\nimport '@fontsource-variable/maven-pro/index.min.css';\nimport './styles/app.scss';",
+            "position": "bottom"
+        }
+    ]
 }
