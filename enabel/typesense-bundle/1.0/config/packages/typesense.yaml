@@ -1,0 +1,8 @@
+typesense:
+  client:
+    nodes:
+      - host: '%env(resolve:TYPESENSE_URL)%'
+        port: '%env(resolve:TYPESENSE_PORT)%'
+        protocol: http
+    api_key: '%env(resolve:TYPESENSE_KEY)%'
+    collections:

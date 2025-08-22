@@ -1,0 +1,35 @@
+{
+  "bundles": {
+    "Enabel\\TypesenseBundle\\TypesenseBundle": ["all"]
+  },
+  "copy-from-recipe": {
+    "config/": "%CONFIG_DIR%/",
+    "docker/": "docker/"
+  },
+  "env": {
+    "TYPESENSE_VERSION": "29.0",
+    "TYPESENSE_URL": "localhost",
+    "TYPESENSE_PORT": "8108",
+    "TYPESENSE_KEY": "xyz",
+    "TYPESENSE_PREFIX": "app_"
+  },
+  "docker-compose": {
+    "docker-compose.override.yml": {
+      "services": [
+        "typesense:",
+        "  image: typesense:${TYPESENSE_VERSION:-29.0}",
+        "  ports:",
+        "    - 8108",
+        "  volumes:",
+        "    - ./docker/typesense-data:/data",
+        "  command: '--data-dir /data --api-key=xyz --enable-cors'",
+        "  labels:",
+        "    com.symfony.server.service-ignore: true,"
+      ]
+    }
+  },
+  "gitignore": [
+    "!/docker/typesense-data/.gitignore",
+    "/docker/typesense-data/"
+  ]
+}

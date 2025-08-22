@@ -1,0 +1,4 @@
+  * Your typesense integration is almost ready.
+    1. Define your collections
+    2. Create the defined collection with: `php bin/console typesense:create`
+    3. Index your data using a command: `php bin/console typesense:import`
