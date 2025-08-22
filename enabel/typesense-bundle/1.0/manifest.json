@@ -13,8 +13,8 @@
     "TYPESENSE_KEY": "xyz",
     "TYPESENSE_PREFIX": "app_"
   },
-  "docker-compose": {
-    "docker-compose.override.yml": {
+  "compose": {
+    "compose.override.yaml": {
       "services": [
         "typesense:",
         "  image: typesense:${TYPESENSE_VERSION:-29.0}",
