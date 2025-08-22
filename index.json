@@ -12,6 +12,9 @@
         "enabel/partner-countries-bundle": [
             "1.0"
         ],
+        "enabel/typesense-bundle": [
+            "1.0"
+        ],
         "enabel/user-bundle": [
             "1.0",
             "2.0"

@@ -1,0 +1,72 @@
+{
+    "manifests": {
+        "enabel/typesense-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Enabel\\TypesenseBundle\\TypesenseBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "docker/": "docker/"
+                },
+                "env": {
+                    "TYPESENSE_VERSION": "29.0",
+                    "TYPESENSE_URL": "localhost",
+                    "TYPESENSE_PORT": "8108",
+                    "TYPESENSE_KEY": "xyz",
+                    "TYPESENSE_PREFIX": "app_"
+                },
+                "docker-compose": {
+                    "docker-compose.override.yml": {
+                        "services": [
+                            "typesense:",
+                            "  image: typesense:${TYPESENSE_VERSION:-29.0}",
+                            "  ports:",
+                            "    - 8108",
+                            "  volumes:",
+                            "    - ./docker/typesense-data:/data",
+                            "  command: '--data-dir /data --api-key=xyz --enable-cors'",
+                            "  labels:",
+                            "    com.symfony.server.service-ignore: true,"
+                        ]
+                    }
+                },
+                "gitignore": [
+                    "!/docker/typesense-data/.gitignore",
+                    "/docker/typesense-data/"
+                ],
+                "post-install-output": [
+                    "  * Your typesense integration is almost ready.",
+                    "    1. Define your collections",
+                    "    2. Create the defined collection with: `php bin/console typesense:create`",
+                    "    3. Index your data using a command: `php bin/console typesense:import`"
+                ]
+            },
+            "files": {
+                "config/packages/typesense.yaml": {
+                    "contents": [
+                        "typesense:",
+                        "  client:",
+                        "    nodes:",
+                        "      - host: '%env(resolve:TYPESENSE_URL)%'",
+                        "        port: '%env(resolve:TYPESENSE_PORT)%'",
+                        "        protocol: http",
+                        "    api_key: '%env(resolve:TYPESENSE_KEY)%'",
+                        "    collections:",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "docker/typesense-data/.gitignore": {
+                    "contents": [
+                        ".gitignore"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d01570d88644664bea056b5087679c6c3f238507"
+        }
+    }
+}
