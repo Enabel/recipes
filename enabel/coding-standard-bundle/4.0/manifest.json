@@ -1,0 +1,36 @@
+{
+    "bundles": {
+        "Enabel\\CodingStandardBundle\\EnabelCodingStandardBundle": [
+            "all"
+        ]
+    },
+    "copy-from-package": {
+        "assets/.azure/": ".azure/",
+        "assets/docker/": "docker/",
+        "assets/public/": "public/",
+        "assets/tools/": "tools/",
+        "assets/var/": "var/",
+        "assets/.php-cs-fixer.dist.php": ".php-cs-fixer.dist.php",
+        "assets/.php-version": ".php-version",
+        "assets/.symfony.local.yaml": ".symfony.local.yaml",
+        "assets/compose.override.yaml": "compose.override.yaml",
+        "assets/compose.yaml": "compose.yaml",
+        "assets/grumphp.yml": "grumphp.yml",
+        "assets/Makefile": "Makefile",
+        "assets/php.ini": "php.ini",
+        "assets/phpstan.dist.neon": "phpstan.dist.neon",
+        "assets/phpunit.xml.dist": "phpunit.xml.dist"
+    },
+    "env": {
+        "MYSQL_VERSION": "8.0",
+        "PHP_VERSION": "8.4",
+        "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
+    },
+    "gitignore": [
+        "..php-cs-fixer.cache",
+        "!/docker/db/data/.gitignore",
+        "!/docker/redis/data/.gitignore",
+        "!/public/coverage/.gitignore",
+        "!/var/coverage/.gitignore"
+    ]
+}

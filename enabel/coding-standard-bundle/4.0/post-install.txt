@@ -1,0 +1,12 @@
+  * Add or Modify your DATABASE_URL config in <fg=green>.env</>
+
+  * We recommend to install these dev-dependencies
+    <comment>
+    composer require --dev dama/doctrine-test-bundle zenstruck/foundry
+    </comment>
+
+  * Copy the docker & phpunit config to your project
+    <comment>
+    cp -R vendor/enabel/coding-standard-bundle/assets/compose.* .
+    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .
+    </comment>
