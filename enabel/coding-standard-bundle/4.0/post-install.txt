@@ -8,5 +8,5 @@
   * Copy the docker & phpunit config to your project
     <comment>
     cp -R vendor/enabel/coding-standard-bundle/assets/compose.* .
-    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.xml.dist .
+    cp -R vendor/enabel/coding-standard-bundle/assets/phpunit.dist.xml .
     </comment>
