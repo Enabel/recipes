@@ -27,7 +27,7 @@
         "DATABASE_URL": "mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=${MYSQL_VERSION}&charset=utf8mb4"
     },
     "gitignore": [
-        "..php-cs-fixer.cache",
+        ".php-cs-fixer.cache",
         "!/docker/db/data/.gitignore",
         "!/docker/redis/data/.gitignore",
         "!/public/coverage/.gitignore",
