@@ -2,7 +2,7 @@
 
   * We recommend to install these dev-dependencies
     <comment>
-    composer require --dev dama/doctrine-test-bundle zenstruck/foundry
+    composer require --dev dama/doctrine-test-bundle zenstruck/foundry phpro/grumphp
     </comment>
 
   * Copy the docker & phpunit config to your project
